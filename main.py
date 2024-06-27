@@ -24,6 +24,7 @@ def main():
         if os.path.isfile(output_path):
             print(f"Skipping {playlist_id} because existing.")
             continue
+        print(f"Start fetching {playlist_id}...")
         playlist_data = fit_qps(0.5, partial(get_playlist, playlist_id))
         with open(output_path, "w+", encoding="utf-8") as f:
             json.dump(playlist_data, f, ensure_ascii=False, indent=4)

@@ -19,6 +19,7 @@ def get_playlist(pid: int):
     if not details:
         for music in track_ids:
             music_id = music["id"]
+            print(f" - fetching details for music {music_id}...")
 
             detail = fit_qps(0.5, partial(ncmapi.song_detail, music_id))
             details.append(detail)
