@@ -4,7 +4,7 @@ import os
 import pandas as pd
 
 
-def extract(data: dict) -> dict:
+def extract_metainfo(data: dict) -> dict:
     playlist_id = data["id"]
     playlist_name = data["name"]
     playlist_play_count = data["playCount"]
@@ -56,7 +56,7 @@ def main():
     track_info = []
     for playlist in playlists:
         track_info.extend(extract_tracks(playlist))
-    playlist_data = list(map(extract, playlists))
+    playlist_data = list(map(extract_metainfo, playlists))
     pd.DataFrame(playlist_data, dtype=str).to_excel(
         "playlist.xlsx",
         index=False,
