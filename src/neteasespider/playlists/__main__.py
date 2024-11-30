@@ -3,9 +3,9 @@ from time import sleep
 from os import makedirs
 
 from playwright.sync_api import sync_playwright, Playwright, Page, Locator
+from neteasespider import PLAYLIST_PATH, CATEGORY
 
 
-CATEGORY = "轻音乐"
 BASE_URL = f"https://music.163.com/#/discover/playlist/?cat={CATEGORY}"
 
 
@@ -23,9 +23,9 @@ def scrap(page: Page, category: str, page_num: int):
         href = loc.get_attribute("href")
         data.append(href.split("=")[-1])
 
-    makedirs("playlists", exist_ok=True)
+    makedirs(PLAYLIST_PATH, exist_ok=True)
     with open(
-        f"playlists/{category}_{page_num:03}.json", mode="w+", encoding="utf-8"
+        f"{PLAYLIST_PATH}/{category}_{page_num:03}.json", mode="w+", encoding="utf-8"
     ) as free:
         json.dump(data, free, ensure_ascii=False, indent=4)
 

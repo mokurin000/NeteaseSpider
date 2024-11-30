@@ -2,14 +2,15 @@ from functools import partial
 import json
 import os
 
-from neteasespider.api_helper import get_playlist
+from neteasespider import PLAYLIST_PATH
 from neteasespider.utils import fit_qps
+from neteasespider.api_helper import get_playlist
 
 
 def main():
     playlists = []
-    for file in os.listdir("playlists"):
-        file_path = os.path.join("playlists", file)
+    for file in os.listdir(PLAYLIST_PATH):
+        file_path = os.path.join(PLAYLIST_PATH, file)
         if not os.path.isfile(file_path):
             continue
         if not file_path.endswith(".json"):
