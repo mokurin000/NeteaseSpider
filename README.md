@@ -1,26 +1,31 @@
 ## 使用说明
 
+### 安装依赖
+
+```bash
+pip install -e .[render,export]
+```
+
 ### 启动爬虫
 
 ```bash
-cd spider
-python fetch_playlist.py
+python -m neteasespider.playlists
 ```
 
 ### 获取歌曲详情
 
 ```bash
-python main.py
+python -m neteasespider
 ```
 
 ### 导出到 Excel
 
 ```bash
-python to_excel.py
+python -m neteasespider.export
 ```
 
 ### 渲染可视化图表
 
 ```bash
-python render.py
+python -m neteasespider.render
 ```

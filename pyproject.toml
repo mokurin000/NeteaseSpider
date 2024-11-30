@@ -1,0 +1,16 @@
+[project]
+name = "neteasespider"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "cachier>=3.1.2",
+    "playwright>=1.49.0",
+    "pycryptodome>=3.21.0",
+    "requests>=2.32.3",
+]
+
+[project.optional-dependencies]
+render = ["openpyxl>=3.1.5", "pandas>=2.2.3", "pyecharts>=2.0.7"]
+export = ["openpyxl>=3.1.5", "pandas>=2.2.3"]

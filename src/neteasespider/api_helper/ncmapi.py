@@ -177,7 +177,3 @@ class API(object):
 
 
 ncmapi = API()
-
-
-if __name__ == "__main__":
-    pass
