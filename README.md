@@ -3,7 +3,7 @@
 ### 安装依赖
 
 ```bash
-pip install -e .[render,export]
+python -m pip install -e .[render,export]
 ```
 
 ### 启动爬虫
